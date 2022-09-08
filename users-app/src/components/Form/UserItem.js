@@ -2,11 +2,12 @@ import React from "react";
 
 
 const UserItem = (props) => {
-    return(
-        <div>
-        <label>{props.name}</label>
-        </div>
-        
+    return (
+        <li className={props.className}>
+            <label>{props.name} </label>
+            <label>({props.age} años)</label>
+        </li>
+
     )
 }
 

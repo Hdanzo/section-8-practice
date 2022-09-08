@@ -2,10 +2,10 @@
 import { useState } from 'react';
 import './App.css';
 import UserForm from './components/Form/UserForm';
-import UserList from './components/Form/UserList';
+import UserList from './components/Form/UserList'; 
 
 
-function App(props) {
+function App() {
 
   const [userDataList, setUserDataList] = useState([])
 
@@ -14,19 +14,16 @@ function App(props) {
     setUserDataList((prevState) => {
       return [
         ...prevState,
-        userData
-      ]
-    }
+        userData,        
+      ]}
     )
-
   }
-  console.log(userDataList)
-
 
   return (
-    <div className="App">
+    <div>
       <UserForm onAddUser = {AddUser}/>
-      <UserList userDataList={userDataList}/>
+      {/* TO DO: condicionar que si el array esta vacio no renderee el userList sino un texto de "Vacio" o algo similar */}
+      <UserList userDataList={userDataList}/> 
     </div>
   );
 }
